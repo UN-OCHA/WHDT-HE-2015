@@ -1,0 +1,58 @@
+@import 'mixins';
+
+// @mixin linkIcon {
+nav {
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+}
+.link-icon { text-decoration: none;
+  span { vertical-align: top;
+    color: white;
+    font-weight: bold;
+  }
+
+}
+.link-icon:hover .spr.icon {
+  &::after {
+    opacity: 1 !important;
+  }
+}
+// }
+
+
+/* Sprites */
+i.spr {
+  display: inline-block;
+  background-image: url(../img/sprites.png);
+  background-repeat: no-repeat;
+
+  &.spr-whdt { //@include spritePos(52px, 51px, 0, -47px);
+    @include icon(url(../img/chart-0.png), 50px, 50px, url(../img/chart-1.png));
+  }
+  &.spr-he { //@include spritePos(51px, 43px, -60px, -46px);
+    @include icon(url(../img/lead-0.png), 50px, 50px, url(../img/lead-1.png));
+  }
+
+  &.spr-he-big {
+    margin: 4px 0;
+  background-image: url(http://i.imgur.com/7ALpZ37.png); @include spritePos(82px, 68px, 0, 0); }
+  &.spr-whdt-big { background-image: url(http://i.imgur.com/IRADqVS.png); @include spritePos(76px, 76px, 0, 0); }
+
+  &.spr-un { @include icon(url(../img/home-0.png), 50px, 50px, url(../img/home-1.png)); }
+  &.spr-tweet { @include spritePos(43px, 35px, -23px, 0); }
+  &.spr-fb { @include spritePos(22px, 43px, 0, 0); }
+  &.spr-info {
+    @include icon(url(../img/next-0.png), 50px, 50px, url(../img/next-1.png));
+  }
+  &.spr-book {
+    @include icon(url(../img/book-0.png), 50px, 50px, url(../img/book-1.png));
+  }
+
+  &.spr-dl {@include icon(url(../img/dl-0.png), 50px, 50px, url(../img/dl-1.png));}
+  &.spr-info-big { @include icon(url(../img/what-next-0.png), 50px, 190px, url(../img/what-next-1.png)); }
+  &.spr-un-big { @include spritePos(121px, 141px, -121px, -2px); }
+
+}

@@ -3,6 +3,66 @@
 <link href='./assets/css/base.css' rel="stylesheet" type="text/css" />
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800' rel='stylesheet' type='text/css'>
 
+<section id='un-whdt-more' class='subpage'>
+  <div class='viewport'>
+    <article id='whdt-more-content' class='content'>
+      <div class='half-content left-cont'></div>
+      <div class='half-content right-cont'>
+        <div class='subsection'>
+          <h1>Information Gap</h1>
+          <p>Due to the complexity of humanitarian crises, there are many gaps in the available information. Even the concepts of humanitarian needs and assistance are flexible, and there are also inherent biases in the information. To truly understand and measure impact, the humanitarian community will need to continue working on better standards and ways of collecting, sharing and using data.</p>
+        </div>
+        <nav>
+          <ul>
+            <li> <a href='' class='link-icon'>
+                  <i class='spr icon spr-dl'></i><span>Download the Report</span>
+                </a>
+            </li>
+            <li><a href='' class='link-icon'>
+                  <i class='spr icon spr-book'></i>
+                  <span>Open Report in Flipbook</span></a></li>
+            <li><a href='javascript: void(null)' onclick='NavControl.toWHDT()' class='link-icon'>
+                  <i class='spr icon spr-whdt'></i>
+                  <span>Back to Main Slide</span></a></li>
+            <li><a href='javascript: void(null)' onclick='NavControl.toHome()' class='link-icon'>
+                  <i class='spr icon spr-un'></i>
+                  <span>Back to Home</span></a></li>
+        </nav>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section id='un-he-more' class='subpage'>
+  <div class='viewport'>
+    <article id='whdt-more-content' class='content'>
+      <div class='half-content left-cont'></div>
+      <div class='half-content right-cont'>
+        <div class='subsection'>
+          <h1>Framework of Effectiveness</h1>
+          <p>The chart shows a framework that will allow us evaluate the effectiveness of policy shifts.</p>
+        </div>
+        <nav>
+          <ul>
+            <li> <a href='' class='link-icon'>
+                  <i class='spr icon spr-dl'></i><span>Download</span>
+                </a>
+            </li>
+            <li><a href='' class='link-icon'>
+                  <i class='spr icon spr-book'></i>
+                  <span>Open Flipbook</span></a></li>
+            <li><a href='javascript: void(null)' onclick='NavControl.toWHDT()' class='link-icon'>
+                  <i class='spr icon spr-he'></i>
+                  <span>Back to Main Slide</span></a></li>
+            <li><a href='javascript: void(null)' onclick='NavControl.toHome()' class='link-icon'>
+                  <i class='spr icon spr-un'></i>
+                  <span>Back to Home</span></a></li>
+        </nav>
+      </div>
+    </article>
+  </div>
+</section>
+
 <section id='un-home' data-isShowing='true'>
   <div class='separator'></div>
   <div class='logo'>
@@ -48,10 +108,12 @@
   <div class='viewport'>
     <nav>
       <ul>
-	        <li style='margin-bottom: 70px'><a href='javascript: void(null);' class='information-item' onclick=''><i class='spr spr-info'></i><span style='font-weight: 600; font-size: 24px;'>What Next</span></a></li>
-        <li><a href='javascript: void(null);' onclick='NavControl.toHE()'>
-          <i class='spr spr-he'></i><span>The World We Want Tomorrow</span></a></li>
-        <!-- <li><a href='javascript: void(null);' onclick='NavControl.toHE()'><i class='spr spr-un'></i><span>Home</span></a></li> -->
+	        <li style='margin-bottom: 70px'>
+            <a href='javascript: void(null);' class='information-item link-icon' onclick='NavControl.toWHDTMore()'>
+            <i class='spr spr-info icon'></i><span style='font-weight: 600; font-size: 24px;'>What Next</span></a></li>
+        <li><a href='javascript: void(null);' class='link-icon' onclick='NavControl.toHE()'>
+          <i class='spr icon spr-he'></i><span>The World We Want Tomorrow</span></a></li>
+        <li><a href='javascript: void(null);' class='link-icon' onclick='NavControl.toHome()'><i class='spr icon spr-un'></i><span>Home</span></a></li>
 
       </ul>
     </nav>
@@ -117,16 +179,17 @@
 
     <nav>
       <ul>
-        <li id='he-what-next'><a href='javascript: void(null);' class='information-item' onclick=''><i class='spr spr-info'></i><span>What next</span></a></li>
-        <!-- <li><a href='javascript: void(null);' onclick='NavControl.toWHDT()'>
-          <i class='spr spr-un'></i></a></li> -->
-        <li><a href='javascript: void(null);' onclick='NavControl.toWHDT()'><i class='spr spr-whdt'></i></a></li>
+        <li id='he-what-next'><a href='javascript: void(null);' class='information-item link-icon' onclick='NavControl.toHEMore()'><i class='spr icon spr-info-big'></i></a></li>
+
+        <li><a class='link-icon' href='javascript: void(null);' onclick='NavControl.toWHDT()'><i class='spr icon spr-whdt'></i></a></li>
+        <li><a href='javascript: void(null);' class='link-icon' onclick='NavControl.toHome()'>
+          <i class='spr icon spr-un'></i></a></li>
 
       </ul>
     </nav>
   </div>
-
 </section>
+
 <script src='./assets/js/jquery.min.js'></script>
 <script src='./assets/js/deparam.min.js'></script>
 <script src='./assets/js/models.js'></script>
@@ -147,6 +210,16 @@ var NavControl = function() {
     toWHDT : function() {
       $("#un-he-whdt input[name=t]").val("");
       $("#un-he-whdt input[name=p]").val("un-whdt");
+      $("#un-he-whdt").submit();
+    },
+    toWHDTMore : function() {
+      $("#un-he-whdt input[name=t]").val("");
+      $("#un-he-whdt input[name=p]").val("un-whdt-more");
+      $("#un-he-whdt").submit();
+    },
+    toHEMore : function() {
+      $("#un-he-whdt input[name=t]").val("");
+      $("#un-he-whdt input[name=p]").val("un-he-more");
       $("#un-he-whdt").submit();
     },
     clearPopup: function() {
@@ -181,7 +254,12 @@ var sectionManager = SectionManager([
   new Section("section#un-he", { hide: { left: "100vw" }, show: { left: "0" },
       onShow: function() { heSectionManager.showAll(); },
       onHide: function() { heSectionManager.hideAll(); }
-   })
+   }),
+  new Section("section#un-whdt-more", { duration: 1000,
+      show : { zIndex: 1000, opacity: 1 }, hide: {zIndex: 300, opacity: 0 } }),
+  new Section("section#un-he-more", { duration: 1000,
+      show : { zIndex: 1000, opacity: 1 }, hide: {zIndex: 300, opacity: 0 } } )
+
 ]);
 
 

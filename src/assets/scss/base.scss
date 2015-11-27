@@ -1,88 +1,7 @@
-@mixin translateAll($x, $y) {
+@import 'mixins';
+@import 'icons';
 
-	-webkit-transform: translate(#{$x}, #{$y});
-	-ms-transform: translate(#{$x}, #{$y});
-	-moz-transform: translate(#{$x}, #{$y});
-	-o-transform: translate(#{$x}, #{$y});
-	transform: translate(#{$x}, #{$y});
-}
-@mixin gradient($dirStart, $dirEnd, $start, $mid, $end) {
-  background: -webkit-linear-gradient($dirStart, $start,$mid, $end, $end , $end, $end); /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient($dirEnd, $start, $mid,$end ,  $end , $end, $end); /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient($dirEnd, $start, $mid, $end , $end , $end, $end); /* For Firefox 3.6 to 15 */
-  background: linear-gradient(to $dirEnd, $start, $mid, $end , $end , $end,$end); /* Standard syntax */
-}
-
-@mixin compat($attr, $value) {
- #{$attr} : #{$value};
- -webkit-#{$attr} : #{$value};
- -moz-#{$attr} : #{$value};
- -ms-#{$attr} : #{$value};
- -o-#{$attr} : #{$value};
-
-}
-@mixin background($image, $vertical, $horizontal) {
-  background-image: $image;
-  background-position: $vertical $horizontal;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-@mixin calcAll($property, $value) {
-	#{$property}: calc(#{$value});
-	#{$property}: -ms-calc(#{$value});
-	#{$property}: -moz-calc(#{$value});
-	#{$property}: -webkit-calc(#{$value});
-	#{$property}: -o-calc(#{$value});
-}
-
-@mixin widthCalc($toEval) {
-	@include calcAll("width", "#{$toEval}");
-}
-
-@mixin heightCalc($toEval) {
-	@include calcAll("height", "#{$toEval}");
-}
-
-@mixin spot($bg, $w, $h, $x, $y) {
-  background-color: $bg;
-  @include widthCalc($w);
-  @include heightCalc($h);
- 
-  @include calcAll("left", "#{$x}");
-  @include calcAll("top", "#{$y}");
-}
-
-@mixin spritePos($w, $h, $x, $y) {
-	@include widthCalc(#{$w});
-  	@include heightCalc(#{$h});
-  background-position: $x $y;
-}
-
-/* Sprites */
-i.spr {
-  display: inline-block;
-  background-image: url(../img/sprites.png);
-  background-repeat: no-repeat;
-
-  &.spr-whdt { @include spritePos(52px, 51px, 0, -47px); }
-  &.spr-he { @include spritePos(51px, 43px, -60px, -46px); }
-
-  &.spr-he-big { 
-    margin: 4px 0;
-	background-image: url(http://i.imgur.com/7ALpZ37.png); @include spritePos(82px, 68px, 0, 0); }
-  &.spr-whdt-big { background-image: url(http://i.imgur.com/IRADqVS.png); @include spritePos(76px, 76px, 0, 0); }
-
-  &.spr-un { @include spritePos(50px, 43px, -67px, 0); }
-
-  &.spr-tweet { @include spritePos(43px, 35px, -23px, 0); }
-  &.spr-fb { @include spritePos(22px, 43px, 0, 0); }
-
-  &.spr-info { @include spritePos(25px, 24px, 0, -119px); }
-
-  &.spr-un-big { @include spritePos(121px, 141px, -121px, -2px); }
-
-}
+$f-orange: #d66000;
 html,body { height: 100%; }
 
 body {
@@ -113,9 +32,9 @@ body {
 	}
     & > .popup-content {
 	  z-index: 100;
-      @include widthCalc("90% - 120px"); 
+      @include widthCalc("90% - 120px");
 	  @include heightCalc("100% - 120px");
-	
+
       margin: 40px 50%;
  	  @include translateAll(-50%,0);
       // padding: 20px;
@@ -191,11 +110,15 @@ body {
               width: 50px;
               height: 50px;
               a.information-item i {
-                margin: 13px;
+                // margin: 13px;
               }
-              a { display: inline-block; height: inherit; width: inherit;}
+              a { display: inline-block; height: inherit; width: inherit;
+
+                i { margin-right: 10px; }
+              }
               img {
                 height: inherit; width: inherit;
+                margin-right: 10px;
               }
               margin-bottom: 10px;
 
@@ -288,14 +211,22 @@ a.white-border {
   border: white solid 1px;
   border-radius: 4px;
 }
+section {
+  &#un-home { z-index: 400; position: absolute; top: 0; left: 0;}
+  &#un-whdt { z-index: 400; }
+  &#un-he { z-index: 500; }
+  &#un-whdt-more { z-index: 300; }
+  &#un-he-more { z-index: 300; }
+}
 
 section#un-home {
-background-color: transparent;
+  background-color: transparent;
+
   div.separator {
 	position: absolute;
 	height: 60%;
 	width: 1px;
-	background-color: white;
+	background-color: #DEDEDE;
 	left: 50%;
 	top: 199px;
   }
@@ -307,7 +238,7 @@ background-color: transparent;
   }
 
   article.home-section {
-	
+
     @include widthCalc("50% - 80px");
     @include heightCalc("100% - 280px");
     padding: 40px;
@@ -327,7 +258,7 @@ background-color: transparent;
 		position: absolute;
 		left: 0; top: 0;
 		z-index: -1;
-		
+
 	}
     h1 {
       font-weight: 300;
@@ -362,25 +293,25 @@ background-color: transparent;
 
 	$he-highlight: #D66000;
 	$whdt-highlight: #0F6CB6;
-	
-	p { 
-		
-		a.white-border { 
+
+	p {
+
+		a.white-border {
 			@include compat(transition, "background-color 0.4s, color 0.4s");
 		}
 	}
-    &#home-whdt{ 
+    &#home-whdt{
 		text-align: right;
-		h1, h3 { color: $whdt-highlight; } 
+		h1, h3 { color: $whdt-highlight; }
 		h1 { font-weight: 600;}
 		&::after {
-			@include background(url(https://ocha.smugmug.com/photos/i-M67txhh/0/L/i-M67txhh-L.png), center, top); 
+			@include background(url(https://ocha.smugmug.com/photos/i-M67txhh/0/L/i-M67txhh-L.png), center, top);
 		}
-		p { 
+		p {
 			&:first-child { margin-top: 54px; }
-			
+
 			color: $whdt-highlight;
-			a.white-border { 
+			a.white-border {
 				color: $whdt-highlight;
 				border-color: $whdt-highlight;
 				color: rgb(255,255,255); background-color: $whdt-highlight;
@@ -390,11 +321,11 @@ background-color: transparent;
 	}
 
     &#home-he{
-		h1, h3 { color: $he-highlight; } 
+		h1, h3 { color: $he-highlight; }
 		h1 { font-weight: 600;}
-		p { 
+		p {
 			color: $he-highlight;
-			a.white-border { 
+			a.white-border {
 				color: $he-highlight;
 				border-color: $he-highlight;
 				color: rgb(255,255,255); background-color: $he-highlight;
@@ -405,7 +336,7 @@ background-color: transparent;
 			@include background(url(https://ocha.smugmug.com/photos/i-7X9Rfsh/0/L/i-7X9Rfsh-L.png), center, top);
 		}
 	 }
-	
+
 	&::after {
 		position: absolute;
 		top: 0;
@@ -426,6 +357,74 @@ background-color: transparent;
    height: 0;
   }
 }
+section#un-whdt-more,
+section#un-he-more, {
+  background-color: whitesmoke;
+  div.viewport {
+    article.content {
+      position: absolute;
+      width: 80%;
+      height: 80%;
+      left: 50%;
+      transform: translate(-50%, 0);
+      top: 10%;
+      div.half-content {
+        @include widthCalc("50% - 20px");
+        @include heightCalc("100% - 20px");
+        padding: 10px;
+        float: left;
+
+        &.right-cont {
+          border-radius: 0 5px 5px 0;
+          background-color: $f-orange;
+          // color: #0F6CB6;
+        }
+
+        nav {
+          li {
+            margin-bottom: 5px;
+            i { vertical-align: middle; }
+
+            span { vertical-align: middle;
+              color: white;
+              text-transform: uppercase;
+              letter-spacing: 2px;
+              margin-left: 5px;
+              font-weight: normal;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+section#un-whdt-more {
+  div.viewport {
+    article.content {
+      div.left-cont {
+        @include background(url(../img/whdt-bg.png), right, center);
+        nav {
+        }
+      }
+    }
+  }
+}
+
+section#un-he-more {
+  background-color: gray;
+  div.viewport {
+    article.content {
+      div.right-cont { @include widthCalc("35% - 20px"); }
+      div.left-cont {
+        @include widthCalc("65% - 20px");
+        @include background(url(../img/pyramid.png), center, center);
+        nav {
+        }
+      }
+    }
+  }
+}
 
 section#un-whdt {
   background-color: rgb(214, 96,0);
@@ -443,7 +442,7 @@ section#un-whdt {
       ul {
         list-style: none;
         padding: 0;
-        width: 50%;
+        width: 70%;
         text-align: left;
         display: inline-block;
         margin-top: 10%;
@@ -461,7 +460,7 @@ section#un-whdt {
 
             span {
                   display: inline-block;
-                @include calcAll(width, "100% - 60px");
+                @include calcAll(width, "200px");
                 vertical-align: middle;
                 margin-left: 5px;
                 color: white;
@@ -519,9 +518,10 @@ section#un-he {
 
 	nav {
 	  #he-what-next {
+      height: 190px;
 	  }
 	}
-	
+
 
     article#un-he-1 {
       @include spot(whitesmoke, "50% - 4px", 45%, 0, 0);
@@ -621,6 +621,38 @@ div.popup {
             // letter-spacing: 1px;
         }
       }
+    }
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  body {
+    div.popup.humanitarian-effectiveness div.popup-content div.text-area h5 {
+      font-size: 13px;
+    }
+    div.popup > .popup-content > .text-area p {
+      font-size: 13px;
+    }
+    & > section.subpage > div.viewport > article > div.hover-item p {
+      font-size: 13px;
+    }
+
+    section {
+      &#un-home {
+        article.home-section {
+          padding-top: 200px;
+          @include heightCalc("100% - 240px");
+          h1 { font-size: 38px; }
+        }
+      }
+    }
+    i.spr.spr-whdt-big {
+      width: 42px; height: 42px;
+      background-size: 100% 100%;
+    }
+    i.spr.spr-he-big {
+      width: 52px; height: 38px;
+      background-size: 100% 100%;
     }
   }
 }
