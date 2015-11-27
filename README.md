@@ -1,3 +1,3 @@
 # To Run
 
-$ python -m SimpleHTTPServer 7000 
+	python -m SimpleHTTPServer 7000 
