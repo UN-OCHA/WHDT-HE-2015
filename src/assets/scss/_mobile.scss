@@ -1,7 +1,7 @@
 //Galaxy Phones
 @import 'mixins';
 @media screen
-  and (max-width: 400px) {
+  and (max-width: 450px) {
   section#un-home div.logo { top: 15px; }
   i.spr {
     background-size: 150px auto;
@@ -209,7 +209,7 @@
     margin: 10px;
     margin-left: 50%;
     @include widthCalc("100% - 20px");
-    @include heightCalc("100% - 20px");
+    @include heightCalc("100% - 50px");
 
     background-position: top center;
     background-size: 100% auto;
@@ -223,30 +223,8 @@
       font-size: 16px;
       position: absolute;
       bottom: 0;
-      overflow: auto;
 
-      &::-webkit-scrollbar {
-          -webkit-appearance: none;
-      }
-
-      &::-webkit-scrollbar:vertical {
-          width: 11px;
-      }
-
-      &::-webkit-scrollbar-thumb {
-          border-radius: 8px;
-          border: 2px solid white; /* should match background, can't be transparent */
-          background-color: rgba(0, 0, 0, .5);
-      }
-
-      &::-webkit-scrollbar:horizontal {
-          height: 11px;
-      }
-
-      &::-webkit-scrollbar-track {
-          background-color: #fff;
-          border-radius: 8px;
-      }
+      @include mobileOverflow;
 
       h1 {
         font-size: 14px;
@@ -267,7 +245,7 @@
   }
 
   body > div.popup.data-trends > div.popup-content {
-    background-position: center -35%;
+    background-position: center -40px;
 
     div.text-area {
       background: transparent;
@@ -285,6 +263,22 @@
       h2 { text-align: left; letter-spacing: 0; }
       h5 { font-size: 12px; text-align: left; }
     }
+  }
+
+  /** Final slides */
+  section#un-whdt-more div.viewport article.content, section#un-he-more div.viewport article.content {
+      @include widthCalc("100% - 10px");
+      @include heightCalc("100% - 50px");
+      margin: 0px;
+      top: 5px;
+
+      div.half-content {
+          @include widthCalc("100% - 20px");
+          &.left-cont { height: 40%; border-radius: 5px 5px 0 0 ;  }
+          &.right-cont { @include heightCalc("60% - 20px"); border-radius: 0 0 5px 5px;
+            @include mobileOverflow;
+          }
+      }
   }
 }
 

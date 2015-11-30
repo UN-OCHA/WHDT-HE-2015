@@ -1,7 +1,12 @@
 # To Run
 
-	python -m SimpleHTTPServer 7000 
+	python -m SimpleHTTPServer 7000
 
-# Deploy 
-	$ larrain:src larrain$ scp -r * 568e@568elmp02.blackmesh.com:/home/568e/unocha.org/var/www/staging.unocha.org/htdocs/humanity360/ 
+# Deploy
+1. Install `sshpass`
+2. Set `SSHPASS` environment variable
+3. SET `WHDTHE_DEST` environment variable
+4. Run:
+
+	$ ./export.sh
 

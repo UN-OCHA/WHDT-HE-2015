@@ -1278,7 +1278,7 @@ div.popup.humanitarian-effectiveness div.popup-content div.text-area h5 {
     width: 52px;
     height: 38px;
     background-size: 100% 100%; } }
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 450px) {
   section#un-home div.logo {
     top: 15px; }
 
@@ -1607,11 +1607,11 @@ div.popup.humanitarian-effectiveness div.popup-content div.text-area h5 {
     width: -moz-calc(100% - 20px);
     width: -webkit-calc(100% - 20px);
     width: -o-calc(100% - 20px);
-    height: calc(100% - 20px);
-    height: -ms-calc(100% - 20px);
-    height: -moz-calc(100% - 20px);
-    height: -webkit-calc(100% - 20px);
-    height: -o-calc(100% - 20px);
+    height: calc(100% - 50px);
+    height: -ms-calc(100% - 50px);
+    height: -moz-calc(100% - 50px);
+    height: -webkit-calc(100% - 50px);
+    height: -o-calc(100% - 50px);
     background-position: top center;
     background-size: 100% auto; }
     body > div.popup.humanitarian-effectiveness > .popup-content > div.text-area,
@@ -1669,7 +1669,7 @@ div.popup.humanitarian-effectiveness div.popup-content div.text-area h5 {
           padding: 0; }
 
   body > div.popup.data-trends > div.popup-content {
-    background-position: center -35%; }
+    background-position: center -40px; }
     body > div.popup.data-trends > div.popup-content div.text-area {
       background: transparent;
       background-color: #666666; }
@@ -1686,6 +1686,52 @@ div.popup.humanitarian-effectiveness div.popup-content div.text-area h5 {
         letter-spacing: 0; }
       body > div.popup.humanitarian-effectiveness > div.popup-content > div.text-area h5 {
         font-size: 12px;
-        text-align: left; } }
+        text-align: left; }
+
+  /** Final slides */
+  section#un-whdt-more div.viewport article.content, section#un-he-more div.viewport article.content {
+    width: calc(100% - 10px);
+    width: -ms-calc(100% - 10px);
+    width: -moz-calc(100% - 10px);
+    width: -webkit-calc(100% - 10px);
+    width: -o-calc(100% - 10px);
+    height: calc(100% - 50px);
+    height: -ms-calc(100% - 50px);
+    height: -moz-calc(100% - 50px);
+    height: -webkit-calc(100% - 50px);
+    height: -o-calc(100% - 50px);
+    margin: 0px;
+    top: 5px; }
+    section#un-whdt-more div.viewport article.content div.half-content, section#un-he-more div.viewport article.content div.half-content {
+      width: calc(100% - 20px);
+      width: -ms-calc(100% - 20px);
+      width: -moz-calc(100% - 20px);
+      width: -webkit-calc(100% - 20px);
+      width: -o-calc(100% - 20px); }
+      section#un-whdt-more div.viewport article.content div.half-content.left-cont, section#un-he-more div.viewport article.content div.half-content.left-cont {
+        height: 40%;
+        border-radius: 5px 5px 0 0; }
+      section#un-whdt-more div.viewport article.content div.half-content.right-cont, section#un-he-more div.viewport article.content div.half-content.right-cont {
+        height: calc(60% - 20px);
+        height: -ms-calc(60% - 20px);
+        height: -moz-calc(60% - 20px);
+        height: -webkit-calc(60% - 20px);
+        height: -o-calc(60% - 20px);
+        border-radius: 0 0 5px 5px;
+        overflow: auto; }
+        section#un-whdt-more div.viewport article.content div.half-content.right-cont::-webkit-scrollbar, section#un-he-more div.viewport article.content div.half-content.right-cont::-webkit-scrollbar {
+          -webkit-appearance: none; }
+        section#un-whdt-more div.viewport article.content div.half-content.right-cont::-webkit-scrollbar:vertical, section#un-he-more div.viewport article.content div.half-content.right-cont::-webkit-scrollbar:vertical {
+          width: 11px; }
+        section#un-whdt-more div.viewport article.content div.half-content.right-cont::-webkit-scrollbar-thumb, section#un-he-more div.viewport article.content div.half-content.right-cont::-webkit-scrollbar-thumb {
+          border-radius: 8px;
+          border: 2px solid white;
+          /* should match background, can't be transparent */
+          background-color: rgba(0, 0, 0, 0.5); }
+        section#un-whdt-more div.viewport article.content div.half-content.right-cont::-webkit-scrollbar:horizontal, section#un-he-more div.viewport article.content div.half-content.right-cont::-webkit-scrollbar:horizontal {
+          height: 11px; }
+        section#un-whdt-more div.viewport article.content div.half-content.right-cont::-webkit-scrollbar-track, section#un-he-more div.viewport article.content div.half-content.right-cont::-webkit-scrollbar-track {
+          background-color: #fff;
+          border-radius: 8px; } }
 
 /*# sourceMappingURL=base.css.map */
