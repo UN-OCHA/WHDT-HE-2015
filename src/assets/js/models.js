@@ -9,7 +9,8 @@ var Popup =(function($) {
       tagline: "",
       content: "",
       fbLink: null,
-      twLink: null
+      twLink: null,
+      closeText: "close"
     }, content);
 
     this.events = $.extend(true, {
@@ -43,7 +44,7 @@ var Popup =(function($) {
 						  .append("<div class='popup-close' />")
                           .append(
                             $("<div class='popup-content'/>")
-                              .css("backgroundImage", "url("+ that.content.image + ")")
+                              .css("backgroundImage", that.content.image ? "url("+ that.content.image + ")" : "none")
                               .append(
                               $("<div class='text-area' />")
                                 .append($("<h1 />").text(that.content.header))
@@ -51,22 +52,36 @@ var Popup =(function($) {
                                 .append($("<h5 />").text(that.content.tagline))
                                 .append(that.content.content)
                                 .append($("<p class='social-area'/>")
+                                  .append(
+                                          $("<ul class='nav' />")
+                                          .append($("<li class='flipbook-popup-link'/>").append(
+                                        $("<a href='javascript: void(null);' target='_blank' class='pop-change link-icon'/>")
+                                        .attr("data-target", "flipbook-" + that.id)
+                                        .html("<i class='spr spr-social-view icon'></i>")
+                                      ))
+                                    .append($("<li />").append(
+                                        $("<a href='" + that.content.downloadLink + "' target='_blank' class='link-icon'/>").html("<i class='spr spr-social-dl icon'></i>")
+                                      ))
                                       .append(
-                                            $("<a href='javascript: void(null);' class='facebook-share-button'/>").html("<i class='spr spr-fb'></i>")
+                                          $("<li />").append(
+                                            $("<a href='javascript: void(null);' class='facebook-share-button'/>").html("<i class='spr spr-social-fb'></i>")
                                               .attr("data-fb",that.content.fbLink)
                                               .attr("data-title", that.content.subheader)
                                               .attr("data-desc", that.content.tagline)
                                               .attr("data-image", that.content.image)
-                                            )
-                                      .append(
-                                            $("<a href='javascript: void(null);' class='twitter-share-button'/>")
-                                              .attr("data-tweet", that.content.tweet)
-                                              .attr("data-twLink", that.content.twLink)
-                                              .html("<i class='spr spr-tweet'></i>"))
+                                          )
+                                      )
+                                      .append($("<li/>").append(
+                                        $("<a href='javascript: void(null);' class='twitter-share-button'/>")
+                                          .attr("data-tweet", that.content.tweet)
+                                          .attr("data-twLink", that.content.twLink)
+                                          .html("<i class='spr spr-social-tw'></i>"))
+                                      )
+                                    )
                                 )
                                 .append($("<p class='close-area'/>")
                                       .append(
-                                            $("<a href='javascript: void(null);' class='close-popup'/>").text("close"))
+                                            $("<a href='javascript: void(null);' class='close-popup'/>").text(that.content.closeText))
                                 )
                             )
                      );

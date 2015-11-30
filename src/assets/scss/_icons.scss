@@ -53,6 +53,12 @@ i.spr {
 
   &.spr-dl {@include icon(url(../img/dl-0.png), 50px, 50px, url(../img/dl-1.png));}
   &.spr-info-big { @include icon(url(../img/what-next-0.png), 50px, 190px, url(../img/what-next-1.png)); }
+
+  &.spr-social-dl {@include icon(url(../img/social-dl-1.png), 103px, 25px,url(../img/social-dl-1.png));}
+  &.spr-social-fb {@include icon(url(../img/social-fb-1.png), 73px, 25px, url(../img/social-fb-1.png));}
+  &.spr-social-tw {@include icon(url(../img/social-tw-1.png), 73px, 25px, url(../img/social-tw-1.png));}
+  &.spr-social-view {@include icon(url(../img/social-view-1.png), 65px, 25px,  url(../img/social-view-1.png));}
+
   &.spr-un-big { @include spritePos(121px, 141px, -121px, -2px); }
 
 }

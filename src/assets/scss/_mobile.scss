@@ -1,0 +1,290 @@
+//Galaxy Phones
+@import 'mixins';
+@media screen
+  and (max-width: 400px) {
+  section#un-home div.logo { top: 15px; }
+  i.spr {
+    background-size: 150px auto;
+    &.spr-un-big {
+      @include spritePos(75px, 89px, -75px, -2px);
+    }
+    &.spr-info, &.spr-he, &.spr-un, &.spr-whdt  {
+      @include spritePos(20px, 20px, 0, 0);
+    }
+  }
+
+  section#un-home {
+    background-color: rgb(199, 199, 199);
+    article.home-section {
+      &#home-whdt {
+        margin-top: 110px;
+      }
+    }
+  }
+  body {
+  section#un-home {
+    article.home-section#home-whdt,
+    article.home-section#home-he {
+      padding: 0;
+      width: 100%;
+      height: calc(50% - 55px);
+      padding-bottom: 0px;
+
+      div.viewport-area {
+        text-align: left;
+        i.spr.spr-whdt-big,i.spr.spr-he-big {
+          float: left;
+          margin: 0 10px;
+          width: 30px; height: 30px;
+        }
+        i.spr.spr-he-big {
+          height: 25px;
+          margin-top: 4px;
+        }
+        h1 { font-weight: 600; font-size: 18px; margin-bottom: 0px; }
+        h3 { margin-left: 51px;
+          margin-top: 0px;
+          span {
+            font-size: 14px;
+            letter-spacing: 0;
+            text-transform: inherit;
+
+            br { display: inline; content: ' '; }
+          }
+        }
+        p {
+          margin-top: 10px !important; margin-bottom: 10px;
+          font-style: italic; font-size: 12px;
+          margin-left: 53px; margin-right: 5px;
+
+          a { font-style: normal; }
+        }
+      }
+    }
+  }
+  section#un-home article.home-section#home-whdt {
+    padding-top: 20px;
+  }
+  section#un-home article.home-section#home-he {
+    padding-top: 20px;
+    .viewport-area {
+      & > * {
+      }
+    }
+  }
+
+  section#un-he article#un-he-1, section#un-whdt .viewport  article#un-whdt-1 {
+    @include spot(whitesmoke, 50%, 33.33%, "20px - 20px", "20px - 20px");
+  }
+  section#un-he article#un-he-2, section#un-whdt .viewport  article#un-whdt-2 {
+    @include spot(whitesmoke, 50%, 33.33%, "20px - 20px", "66.66% - 33.33%");
+  }
+  section#un-he article#un-he-3, section#un-whdt .viewport  article#un-whdt-3 {
+    @include spot(whitesmoke, 50%, 33.33%, "20px - 20px", "99.99% - 33.33%");
+  }
+  section#un-he article#un-he-4, section#un-whdt .viewport article#un-whdt-4 {
+    @include spot(whitesmoke, 50%, 33.33%, "100% - 50%", "99.99% - 99.99%");
+  }
+  section#un-he article#un-he-5, section#un-whdt .viewport article#un-whdt-5 {
+    @include spot(whitesmoke, 50%, 33.33%, "100% - 50%", "99.99% - 66.66%");
+  }
+  section#un-he .viewport {
+    nav {
+      div.for-desktop { display: none; }
+      div.for-mobile { display: block; }
+    }
+    article.subsubpage {
+      &#un-he-4 {
+        @include background(url(https://ocha.smugmug.com/photos/i-GHdtNb8/1/L/i-GHdtNb8-L.png), top, center);
+      }
+      div.hover-item {
+        h1 {
+          font-size: 15px;
+          padding: 0px 15px 0px 0px;
+          display: inline-block;
+          margin-top: 5px;
+          margin-left: 5px;
+          padding-right: 5px;
+        }
+        h3 {
+          padding: 5px 0 0 4px;
+          font-size: 12px;
+          font-weight: 600;
+          text-shadow: 0px 1px 1px rgba(0,0,0,0.2);
+        }
+        h5 {
+          margin-left: 24px;
+          font-size: 12px;
+          letter-spacing: normal;
+          text-transform: none;
+        }
+        p {
+          line-height: 1.2;
+          font-size: 12px;
+          margin-left: 25px;
+          font-style: italic;
+          a { font-style: normal; }
+        }
+      }
+    }
+  }
+  section#un-whdt .viewport nav, section#un-he .viewport nav, {
+   margin-top: 0;
+   @include spot($orange, "50% - 30px", "33.33% - 30px", "100% - 50%", "99.99% - 33.33%");
+    ul {
+      margin-top: 0;
+      @include widthCalc("100%");
+      li {
+        height: auto;
+        width: auto;
+        &:first-child {
+          margin-bottom: 20px !important;
+        }
+
+        a {
+          height: auto;
+
+          span {
+            @include widthCalc("100% - 30px");
+            font-size: 16px !important;
+            text-transform: none;
+            letter-spacing: normal;
+            vertical-align: top;
+            font-weight: normal;
+          }
+
+          i {
+            vertical-align: top;
+            margin-right: 5px;
+          }
+        }
+      }
+    }
+  }
+}
+
+  .separator { display: none; }
+
+  body, html { background-color: black !important; }
+
+  section#un-whdt .viewport .subsubpage .hover-item {
+
+    h1 {
+      margin: 0 5px 0;
+      padding-top: 5px;
+      font-weight: 600;
+      letter-spacing: 2px;
+    }
+
+    h3 {
+      padding-bottom: 0px;
+      padding: 0;
+      margin-left: 5px;
+      margin-top: 0px;
+      letter-spacing: 1px;
+      font-size: 12px;
+      text-transform: none;
+      margin-right: 5px;
+    }
+
+    p {
+      margin-left: 5px;
+      line-height: 1.2;
+      font-size: 12px;
+      font-style: italic;
+      @include widthCalc("100% - 5px");
+      a { font-style: normal; }
+
+
+    }
+  }
+
+  a.white-border {
+    padding: 2px 5px;
+  }
+
+
+  body > div.popup.humanitarian-effectiveness > .popup-content,
+  body > div.popup.data-trends > div.popup-content {
+    margin: 10px;
+    margin-left: 50%;
+    @include widthCalc("100% - 20px");
+    @include heightCalc("100% - 20px");
+
+    background-position: top center;
+    background-size: 100% auto;
+
+    & > div.text-area {
+      text-align: left;
+      padding: 5px;
+      @include widthCalc("100% - 10px");
+      @include heightCalc("50% - 10px");
+
+      font-size: 16px;
+      position: absolute;
+      bottom: 0;
+      overflow: auto;
+
+      &::-webkit-scrollbar {
+          -webkit-appearance: none;
+      }
+
+      &::-webkit-scrollbar:vertical {
+          width: 11px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+          border-radius: 8px;
+          border: 2px solid white; /* should match background, can't be transparent */
+          background-color: rgba(0, 0, 0, .5);
+      }
+
+      &::-webkit-scrollbar:horizontal {
+          height: 11px;
+      }
+
+      &::-webkit-scrollbar-track {
+          background-color: #fff;
+          border-radius: 8px;
+      }
+
+      h1 {
+        font-size: 14px;
+        margin-bottom: 5px;
+        letter-spacing: 1px;
+      }
+      h2 {
+        font-size: 16px;
+        text-transform: none;
+        font-weight: 600;
+      }
+
+      p {
+        text-align: left;
+        ul { padding: 0; }
+      }
+    }
+  }
+
+  body > div.popup.data-trends > div.popup-content {
+    background-position: center -35%;
+
+    div.text-area {
+      background: transparent;
+      background-color: rgba(102,102,102,1);
+    }
+  }
+  body > div.popup.humanitarian-effectiveness > div.popup-content {
+    background-size: auto 50%;
+
+    & > div.text-area {
+      background: transparent;
+      background-color: $orange;
+
+      h1 { text-align: left; }
+      h2 { text-align: left; letter-spacing: 0; }
+      h5 { font-size: 12px; text-align: left; }
+    }
+  }
+}
+

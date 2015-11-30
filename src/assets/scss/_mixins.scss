@@ -1,3 +1,6 @@
+$orange: #D66000;
+$blue: #0F6CB6;
+
 @mixin translateAll($x, $y) {
 
   -webkit-transform: translate(#{$x}, #{$y});

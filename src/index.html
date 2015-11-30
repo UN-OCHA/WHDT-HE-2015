@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
 <link href='./assets/css/base.css' rel="stylesheet" type="text/css" />
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,800' rel='stylesheet' type='text/css'>
 
@@ -14,19 +16,20 @@
         </div>
         <nav>
           <ul>
-            <li> <a href='' class='link-icon'>
-                  <i class='spr icon spr-dl'></i><span>Download the Report</span>
+            <li><a href='http://online.fliphtml5.com/srhi/czho/' class='pop-change link-icon' target='_blank'>
+                  <i class='spr icon spr-book'></i>
+                  <span>View Online Version</span></a></li>
+            <li> <a href='https://docs.unocha.org/sites/dms/Documents/WHDT2015.pdf' target='_blank' class='link-icon'>
+                  <i class='spr icon spr-dl'></i><span>Download PDF</span>
                 </a>
             </li>
-            <li><a href='' class='link-icon'>
-                  <i class='spr icon spr-book'></i>
-                  <span>Open Report in Flipbook</span></a></li>
+            <li>&nbsp;<br/>&nbsp;</li>
             <li><a href='javascript: void(null)' onclick='NavControl.toWHDT()' class='link-icon'>
                   <i class='spr icon spr-whdt'></i>
-                  <span>Back to Main Slide</span></a></li>
+                  <span>Back</span></a></li>
             <li><a href='javascript: void(null)' onclick='NavControl.toHome()' class='link-icon'>
                   <i class='spr icon spr-un'></i>
-                  <span>Back to Home</span></a></li>
+                  <span>Home</span></a></li>
         </nav>
       </div>
     </article>
@@ -45,18 +48,19 @@
         <nav>
           <ul>
             <li> <a href='javascript: void(null)' class='link-icon'>
-                  <i class='spr icon spr-dl'></i><span>Download</span>
+                  <i class='spr icon spr-dl'></i><span>Download PDF</span>
                 </a>
             </li>
             <li><a href='javascript: void(null)' class='link-icon'>
                   <i class='spr icon spr-book'></i>
-                  <span>Open Flipbook</span></a></li>
+                  <span>View Online Version</span></a></li>
+            <li>&nbsp;<br/>&nbsp;</li>
             <li><a href='javascript: void(null)' onclick='NavControl.toHE()' class='link-icon'>
                   <i class='spr icon spr-he'></i>
-                  <span>Back to Main Slide</span></a></li>
+                  <span>Back</span></a></li>
             <li><a href='javascript: void(null)' onclick='NavControl.toHome()' class='link-icon'>
                   <i class='spr icon spr-un'></i>
-                  <span>Back to Home</span></a></li>
+                  <span>Home</span></a></li>
         </nav>
       </div>
     </article>
@@ -110,7 +114,7 @@
       <ul>
 	        <li style='margin-bottom: 70px'>
             <a href='javascript: void(null);' class='information-item link-icon' onclick='NavControl.toWHDTMore()'>
-            <i class='spr spr-info icon'></i><span style='font-weight: 600; font-size: 24px;'>What Next</span></a></li>
+            <i class='spr spr-info icon'></i><span style='font-weight: 600; font-size: 24px;'>Learn More</span></a></li>
         <li><a href='javascript: void(null);' class='link-icon' onclick='NavControl.toHE()'>
           <i class='spr icon spr-he'></i><span>The World We Want Tomorrow</span></a></li>
         <li><a href='javascript: void(null);' class='link-icon' onclick='NavControl.toHome()'><i class='spr icon spr-un'></i><span>Home</span></a></li>
@@ -126,7 +130,7 @@
     </article>
     <article id='un-whdt-2' class='subsubpage'>
       <div class='hover-item'>
-        <h1>Challenge</h1><h3>The impact of conflict</h3>
+        <h1>Challenge</h1><h3>Long-term trends in conflict</h3>
         <p>The impact of conflict on humanitarian action in the Middle EAst and North Africa region.</p>
         <p><a href='javascript: void(null)' class='pop-change white-border' data-target='un-whdt-2'>View More</a></p>
       </div>
@@ -178,14 +182,27 @@
     </div></article>
 
     <nav>
-      <ul>
-        <li id='he-what-next'><a href='javascript: void(null);' class='information-item link-icon' onclick='NavControl.toHEMore()'><i class='spr icon spr-info-big'></i></a></li>
+      <div class='for-desktop'>
+        <ul>
+          <li id='he-what-next'><a href='javascript: void(null);' class='information-item link-icon' onclick='NavControl.toHEMore()'><i class='spr icon spr-info-big'></i></a></li>
 
-        <li><a class='link-icon' href='javascript: void(null);' onclick='NavControl.toWHDT()'><i class='spr icon spr-whdt'></i></a></li>
-        <li><a href='javascript: void(null);' class='link-icon' onclick='NavControl.toHome()'>
-          <i class='spr icon spr-un'></i></a></li>
+          <li><a class='link-icon' href='javascript: void(null);' onclick='NavControl.toWHDT()'><i class='spr icon spr-whdt'></i></a></li>
+          <li><a href='javascript: void(null);' class='link-icon' onclick='NavControl.toHome()'>
+            <i class='spr icon spr-un'></i></a></li>
 
-      </ul>
+        </ul>
+      </div>
+      <div class='for-mobile'>
+        <ul>
+             <li style='margin-bottom: 70px'>
+              <a href='javascript: void(null);' class='information-item link-icon' onclick='NavControl.toHEMore()()'>
+              <i class='spr spr-info icon'></i><span style='font-weight: 600; font-size: 24px;'>What Next</span></a></li>
+          <li><a href='javascript: void(null);' class='link-icon' onclick='NavControl.toWHDT()'>
+            <i class='spr icon spr-whdt'></i><span>The Challenges we Face Today</span></a></li>
+          <li><a href='javascript: void(null);' class='link-icon' onclick='NavControl.toHome()'><i class='spr icon spr-un'></i><span>Home</span></a></li>
+
+        </ul>
+      </div>
     </nav>
   </div>
 </section>
@@ -272,6 +289,19 @@ $.ajax({
         console.log(d);
         d.result.forEach(function(item) {
           popupArray.push(new Popup(item.id, item, {onClose: NavControl.clearPopup}));
+
+          //For flipbook
+          popupArray.push(new Popup("flipbook-" + item.id,
+            {
+              image: "",
+              downloadLink: item.downloadLink,
+              fbLink: item.fbLink,
+              twLink: item.twLink,
+              className: 'flipbook-item',
+              content: "<iframe frameborder='0' src='" + item.flipbookLink + "'></iframe>",
+              closeText: "X"
+            },
+            {onClose: NavControl.clearPopup}));
         });
       }
   });
@@ -290,7 +320,7 @@ var popups = PopupManager(popupArray);
     var p = $("#un-he-whdt").serialize();
     window.location.hash = p;
 
-    console.log(p);
+    // console.log(p);
 
     return false;
   });
@@ -327,7 +357,7 @@ var windowFeatures = "status=no,height=" + height + ",width=" + width + ",resiza
 
     var show_text = data.tweet;
     var link = data.twlink;
-    console.log(data);
+    // console.log(data);
     var param = $.param({
       url: link,
       via: "unocha",
@@ -366,7 +396,7 @@ var windowFeatures = "status=no,height=" + height + ",width=" + width + ",resiza
       popups.hide();
     }
 
-    console.log(target);
+    // console.log(target);
     //Reset values
     $("#un-he-whdt input[name=p]").val(target.p);
     $("#un-he-whdt input[name=t]").val(target.t);
@@ -379,7 +409,7 @@ var windowFeatures = "status=no,height=" + height + ",width=" + width + ",resiza
     var target = $.deparam(_hash);
 
     $.extend(original, target);
-    console.log(target);
+    // console.log(target);
     $("#un-he-whdt input[name=p]").val(target.p);
     $("#un-he-whdt input[name=t]").val(target.t);
   };
