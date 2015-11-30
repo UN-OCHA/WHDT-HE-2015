@@ -8,5 +8,5 @@
 3. SET `WHDTHE_DEST` environment variable
 4. Run:
 
-    $ ./export.sh
+		$ ./export.sh
 
