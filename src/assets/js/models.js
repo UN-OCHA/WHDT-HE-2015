@@ -15,23 +15,25 @@ var Popup =(function($) {
 
     this.events = $.extend(true, {
       onClose: function() {
-        console.log("XXXX", this);
         var that = this;
-        console.log(that);
-        that.close();
+        // that.close();
+      }, onOpen : function(container, event) {
+        // that.close();
       }
     }, events);
 
     this.rendered = null;
     this.close = function() {
       var that = this;
-      console.log(that);
+      // console.log(that);
       that.rendered.hide();
     };
 
     this.open = function() {
       var that = this;
       that.rendered.show();
+
+      that.rendered.trigger("popup-open");
     }
 
     this.initialize = function() {
@@ -39,7 +41,7 @@ var Popup =(function($) {
 
       //produce popup
       that.rendered = function() {
-        console.log(that.content.image);
+        // console.log(that.content.image);
           var rendered = $("<div class='popup "+ that.content.className +"'/>").attr("id", that.id).attr("data-id", that.id)
 						  .append("<div class='popup-close' />")
                           .append(
@@ -50,14 +52,14 @@ var Popup =(function($) {
                                 .append($("<h1 />").text(that.content.header))
                                 .append($("<h2 />").text(that.content.subheader))
                                 .append($("<h5 />").text(that.content.tagline))
-                                .append(that.content.content)
+                                .append($("<div class='popup-text-content' />").html(that.content.content))
                                 .append($("<p class='social-area'/>")
                                   .append(
                                           $("<ul class='nav' />")
                                           .append($("<li class='flipbook-popup-link'/>").append(
-                                        $("<a href='javascript: void(null);' target='_blank' class='pop-change link-icon'/>")
+                                        $("<a href='javascript: void(null);' class='pop-change link-icon'/>")
                                         .attr("data-target", "flipbook-" + that.id)
-                                        .html("<i class='spr spr-social-view icon'></i>")
+                                        .html("<i class='spr spr-social-more icon'></i>")
                                       ))
                                     .append($("<li />").append(
                                         $("<a href='" + that.content.downloadLink + "' target='_blank' class='link-icon'/>").html("<i class='spr spr-social-dl icon'></i>")
@@ -88,8 +90,13 @@ var Popup =(function($) {
           return rendered;
         }();
 
+      that.rendered.on("popup-open", function(event) {
+        that.events.onOpen.call(that, that.rendered, event);
+      });
       that.rendered.on("popup-close", function() { that.events.onClose.call(that); });
-      that.rendered.find(".close-popup, .popup-close").on("click", function() { that.rendered.trigger("popup-close"); });
+      that.rendered.find(".close-popup, .popup-close").on("click", function() {
+        that.close();
+        that.rendered.trigger("popup-close"); });
       $("body").append(that.rendered);
     };
 
@@ -117,7 +124,6 @@ var Section = (function($) {
     this.show = function() {
       var that = this;
       that.container.animate(that.options.show, that.options.duration);
-
       that.container.trigger("section-mod-show");
     };
 
@@ -151,7 +157,7 @@ var Section = (function($) {
       // if (that.options.onShow && typeof that.options.onShow == "function") {
         that.container.on("section-mod-show", function(event) {
           if (that.options.onShow && typeof that.options.onShow == "function") {
-            that.options.onShow();
+            that.options.onShow(that.container, event);
           }
           event.stopPropagation(); });
       // }
