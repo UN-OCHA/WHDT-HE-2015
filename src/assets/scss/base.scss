@@ -4,12 +4,19 @@
 $f-orange: #d66000;
 html,body { height: 100%; }
 
+
+.subsubpage.ar {
+  h5, h3, p { direction: rtl; }
+  h3 { font-size: 18; text-transform: none; }
+}
 body {
   margin: 0;
   padding: 0;
   overflow: hidden;
   font-family: 'Open Sans', sans-serif;
   color: white;
+
+  *.ar-x { direction: rtl; letter-spacing: 0 !important; }
 
   h1,h2,h3,h4,h5 { margin: 0; padding: 0; }
 
@@ -692,7 +699,7 @@ div.popup {
       p.social-area { display: none; }
     }
     & > .popup-content {
-      @include widthCalc("100% - 20px");
+      @include widthCalc("1100");
       @include heightCalc("100% - 20px");
       top: 10px; left: 10px;
       margin-top: 10px;
@@ -740,6 +747,11 @@ div.popup {
   }
 
   &.data-trends, &.humanitarian-effectiveness {
+    &.ar {
+      h1,h2,h5,.popup-text-content {
+        direction: rtl;
+      }
+    }
     .popup-content {
       .text-area {
         text-align: right;
