@@ -189,7 +189,7 @@
 </section>
 
 <section id='un-home' data-isShowing='true'>
-  <!-- <a href='./ar.php' class='lang'>AR</a> -->
+  <a href='./ar.php' class='lang'>AR</a>
   <div class='separator'></div>
   <div class='logo'>
     <i class='spr spr-un-big'></i>
