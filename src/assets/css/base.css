@@ -999,12 +999,26 @@ html, body {
   font-size: 18;
   text-transform: none; }
 
+#un-whdt .subsubpage.ar {
+  text-align: right; }
+  #un-whdt .subsubpage.ar h1, #un-whdt .subsubpage.ar h3 {
+    margin-right: 20px !important; }
+
 body {
   margin: 0;
   padding: 0;
   overflow: hidden;
   font-family: 'Open Sans', sans-serif;
   color: white; }
+  body .lang {
+    position: absolute;
+    z-index: 1000;
+    font-size: 20px;
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+    top: 5px;
+    right: 10px; }
   body *.ar-x {
     direction: rtl;
     letter-spacing: 0 !important; }
@@ -1873,6 +1887,8 @@ div.popup.flipbook-item > .popup-content {
           display: none; }
 div.popup.data-trends.ar h1, div.popup.data-trends.ar h2, div.popup.data-trends.ar h5, div.popup.data-trends.ar .popup-text-content, div.popup.humanitarian-effectiveness.ar h1, div.popup.humanitarian-effectiveness.ar h2, div.popup.humanitarian-effectiveness.ar h5, div.popup.humanitarian-effectiveness.ar .popup-text-content {
   direction: rtl; }
+div.popup.data-trends.ar ul.nav li a:not(.facebook-share-button), div.popup.humanitarian-effectiveness.ar ul.nav li a:not(.facebook-share-button) {
+  display: none; }
 div.popup.data-trends .popup-content .text-area, div.popup.humanitarian-effectiveness .popup-content .text-area {
   text-align: right; }
   div.popup.data-trends .popup-content .text-area div.popup-text-content, div.popup.humanitarian-effectiveness .popup-content .text-area div.popup-text-content {

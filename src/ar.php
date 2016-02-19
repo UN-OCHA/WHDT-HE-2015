@@ -190,6 +190,7 @@
 </section>
 
 <section id='un-home' data-isShowing='true'>
+  <a href='./index.php' class='lang'>EN</a>
   <div class='separator'></div>
   <div class='logo'>
     <i class='spr spr-un-big'></i>
@@ -209,7 +210,7 @@
        </p>
   </div>
   </article>
-  <article class='home-section' id='home-he'>
+  <article class='home-section' id='home-he' style='text-align: left;'>
   <div class='gray-bg'></div>
   <div class='viewport-area'>
     <i class='spr spr-he-big'></i>
@@ -260,7 +261,7 @@
     <article id='un-whdt-3' class='subsubpage ar'>
       <div class='hover-item'>
         <h1>تحدي</h1><h3>أثر الأسلحة المتفجرة على المدنيين</h3>
-        <p>The impact of explosive weapons on civilian populations.</p>
+        <p></p>
         <p><a href='javascript: void(null)' class='pop-change white-border ar-x' data-target='un-whdt-3'>أكثر</a></p>
       </div>
     </article>
